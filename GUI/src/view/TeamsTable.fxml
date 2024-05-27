@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>  
+
+<VBox fx:controller="controller.TeamsController" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1"  styleClass="background">
+    <Label styleClass="label-h2" text="All Teams"/>
+    <TableView fx:id="allTeamsTv" >
+        <columns>
+            <TableColumn text="Team Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="No" text="Number of Players"/>
+            <TableColumn fx:id="avgCredit" text="Average Player Credit"/>
+            <TableColumn fx:id="avgAge" text="Average Age"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="center" style="-fx-padding: 10 10 10 10">
+        <Button fx:id="add" text="Add" onAction="#add"/>
+        <Button disable="true" fx:id="manage" text="Manage" onAction="#manage"/>
+        <Button disable="true" fx:id="delete" text="Delete" onAction="#delete"/>
+        <Button id="close" text="Close" onAction="#close"/>
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    
+</VBox>
